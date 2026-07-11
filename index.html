@@ -79,8 +79,13 @@
   .note { margin-top: 44px; font-size: 1.05rem; color: var(--ink-soft); font-style: italic; line-height: 1.7; }
   footer { margin-top: 56px; font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); }
   @media (max-width: 480px) {
-    .preamble { font-size: 1.2rem; }
-    .cd-box { min-width: 72px; }
+    .wrap { padding: 36px 20px 56px; }
+    .preamble { font-size: 1.55rem; }
+    .msg { font-size: 1.45rem; }
+    .note { font-size: 1.3rem; }
+    footer { font-size: 0.95rem; }
+    .cd-box { min-width: 70px; padding: 14px 8px; }
+    .btn { padding: 14px 28px; font-size: 0.95rem; }
   }
 </style>
 </head>
@@ -115,7 +120,7 @@
 
   <p class="note">
     La invitación formal, con todos los detalles del viaje y la celebración,<br>
-    llegará pronto. Mientras tanto… ve pensando en tus vuelos ✈
+    llegará pronto. Mientras tanto… ve pensando en tus vuelos ✈&#xFE0E;
   </p>
 
   <footer>B &amp; R · Firenze · 2027</footer>
@@ -176,6 +181,18 @@
   ].join("\r\n");
   document.getElementById("btn-ics").href =
     "data:text/calendar;charset=utf-8," + encodeURIComponent(ics);
+
+  // Conteo de clics en los botones de calendario (GoatCounter)
+  function trackClick(id, name) {
+    document.getElementById(id).addEventListener("click", function () {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({ path: name, title: name, event: true });
+      }
+    });
+  }
+  trackClick("btn-google", "clic-google-calendar");
+  trackClick("btn-ics", "clic-apple-outlook");
 </script>
+<script data-goatcounter="https://bodabyr.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
