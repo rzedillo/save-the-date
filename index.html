@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save Our Date — Blanca &amp; Rodrigo</title>
+<meta property="og:title" content="Save Our Date — Blanca &amp; Rodrigo">
+<meta property="og:description" content="21 de marzo de 2027 · Firenze, Italia. ¡Aparta la fecha!">
+<meta property="og:image" content="save-the-date.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2b2118;
+    --ink-soft: #5c5044;
+    --cream: #faf6f0;
+    --line: #d8cfc2;
+    --accent: #8a7356;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 48px 24px 64px; }
+  .eyebrow {
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  h1 { font-size: 2.6rem; font-weight: 500; letter-spacing: 0.12em; line-height: 1.15; }
+  h1 .script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.4rem;
+    display: block;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    margin: 2px 0;
+  }
+  .names { font-size: 1.5rem; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 26px; }
+  .date-place { font-size: 1.15rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); margin-top: 10px; line-height: 1.7; }
+  .photo {
+    margin: 36px auto 0;
+    max-width: 460px;
+  }
+  .photo img {
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 18px 50px rgba(43, 33, 24, 0.22);
+  }
+  .divider {
+    width: 64px; height: 1px; background: var(--line);
+    margin: 40px auto;
+    position: relative;
+  }
+  .divider::after {
+    content: "❦";
+    position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+    background: var(--cream); padding: 0 12px; color: var(--accent); font-size: 1rem;
+  }
+  .countdown { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .cd-box {
+    min-width: 84px; padding: 16px 10px;
+    border: 1px solid var(--line); border-radius: 6px; background: #fff;
+  }
+  .cd-num { font-size: 2.1rem; font-weight: 600; line-height: 1; }
+  .cd-lab { font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink-soft); margin-top: 8px; }
+  .msg { font-size: 1.25rem; font-style: italic; color: var(--ink-soft); line-height: 1.7; max-width: 480px; margin: 0 auto; }
+  .buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+  .btn {
+    display: inline-block; padding: 13px 26px;
+    border: 1px solid var(--ink); border-radius: 3px;
+    color: var(--ink); text-decoration: none;
+    font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase;
+    transition: background 0.25s, color 0.25s;
+  }
+  .btn:hover { background: var(--ink); color: var(--cream); }
+  .btn.solid { background: var(--ink); color: var(--cream); }
+  .btn.solid:hover { background: var(--accent); border-color: var(--accent); }
+  .note { margin-top: 44px; font-size: 1.05rem; color: var(--ink-soft); font-style: italic; line-height: 1.7; }
+  footer { margin-top: 56px; font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); }
+  @media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    h1 .script { font-size: 1.9rem; }
+    .cd-box { min-width: 72px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Aparta la fecha</p>
+  <h1>SAVE <span class="script">Our</span> DATE</h1>
+  <p class="names">Blanca &amp; Rodrigo</p>
+  <p class="date-place">21 · Marzo · 2027<br>Firenze, Italia</p>
+
+  <div class="photo">
+    <img src="save-the-date.jpg" alt="Blanca y Rodrigo — Save the Date, 21 de marzo de 2027, Firenze, Italia">
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="countdown" id="countdown" aria-label="Cuenta regresiva a la boda">
+    <div class="cd-box"><div class="cd-num" id="cd-d">—</div><div class="cd-lab">Días</div></div>
+    <div class="cd-box"><div class="cd-num" id="cd-h">—</div><div class="cd-lab">Horas</div></div>
+    <div class="cd-box"><div class="cd-num" id="cd-m">—</div><div class="cd-lab">Min</div></div>
+    <div class="cd-box"><div class="cd-num" id="cd-s">—</div><div class="cd-lab">Seg</div></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="msg">Nos casamos, y no podemos imaginar ese día sin ti.<br>Aparta la fecha — nos vemos en Florencia.</p>
+
+  <div class="buttons">
+    <a class="btn solid" id="btn-google" target="_blank" rel="noopener"
+       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda%20de%20Blanca%20%26%20Rodrigo&dates=20270321/20270322&location=Firenze%2C%20Italia&details=Save%20the%20date%20%E2%80%94%20la%20invitaci%C3%B3n%20formal%20y%20los%20detalles%20vienen%20pronto.">
+      Google Calendar
+    </a>
+    <a class="btn" id="btn-ics" download="Boda-Blanca-y-Rodrigo.ics" href="#">Apple / Outlook</a>
+  </div>
+
+  <p class="note">
+    La invitación formal, con todos los detalles del viaje y la celebración,<br>
+    llegará pronto. Mientras tanto… ve pensando en tus vuelos ✈
+  </p>
+
+  <footer>B &amp; R · Firenze · 2027</footer>
+</div>
+
+<script>
+  // Cuenta regresiva (hora local del invitado, medianoche del 21 de marzo de 2027)
+  var target = new Date(2027, 2, 21, 0, 0, 0).getTime();
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+  function tick() {
+    var diff = target - Date.now();
+    if (diff <= 0) {
+      document.getElementById("cd-d").textContent = "0";
+      document.getElementById("cd-h").textContent = "00";
+      document.getElementById("cd-m").textContent = "00";
+      document.getElementById("cd-s").textContent = "00";
+      return;
+    }
+    var s = Math.floor(diff / 1000);
+    document.getElementById("cd-d").textContent = Math.floor(s / 86400);
+    document.getElementById("cd-h").textContent = pad(Math.floor(s % 86400 / 3600));
+    document.getElementById("cd-m").textContent = pad(Math.floor(s % 3600 / 60));
+    document.getElementById("cd-s").textContent = pad(s % 60);
+    setTimeout(tick, 1000);
+  }
+  tick();
+
+  // Archivo .ics para Apple Calendar / Outlook (evento de día completo)
+  var ics = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Blanca y Rodrigo//Save the Date//ES",
+    "BEGIN:VEVENT",
+    "UID:boda-blanca-rodrigo-2027@savethedate",
+    "DTSTAMP:20260711T120000Z",
+    "DTSTART;VALUE=DATE:20270321",
+    "DTEND;VALUE=DATE:20270322",
+    "SUMMARY:Boda de Blanca & Rodrigo",
+    "LOCATION:Firenze\\, Italia",
+    "DESCRIPTION:Save the date — la invitación formal y los detalles vienen pronto.",
+    "END:VEVENT",
+    "END:VCALENDAR"
+  ].join("\r\n");
+  document.getElementById("btn-ics").href =
+    "data:text/calendar;charset=utf-8," + encodeURIComponent(ics);
+</script>
+</body>
+</html>
