@@ -26,7 +26,17 @@
     text-align: center;
     -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 640px; margin: 0 auto; padding: 48px 24px 64px; }
+  /* Duomo de Firenze — line art tenue de fondo */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 620' fill='none' stroke='%238a7356' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M100 600 H1100'/%3E%3Cpath d='M150 600 V160 M235 600 V160'/%3E%3Cpath d='M150 240 H235 M150 320 H235 M150 400 H235 M150 480 H235'/%3E%3Cpath d='M175 600 V540 A17 17 0 0 1 209 540 V600'/%3E%3Cpath d='M175 460 V420 A17 17 0 0 1 209 420 V460 M175 380 V340 A17 17 0 0 1 209 340 V380 M175 300 V260 A17 17 0 0 1 209 260 V300'/%3E%3Cpath d='M140 160 H245 M150 160 L192 112 L235 160'/%3E%3Cpath d='M235 440 H620 M270 600 V440'/%3E%3Cpath d='M320 600 V530 A22 22 0 0 1 364 530 V600 M430 600 V530 A22 22 0 0 1 474 530 V600 M540 600 V530 A22 22 0 0 1 584 530 V600'/%3E%3Cpath d='M640 600 V440 M900 600 V440 M640 440 V330 H900 V440'/%3E%3Ccircle cx='690' cy='385' r='22'/%3E%3Ccircle cx='770' cy='385' r='22'/%3E%3Ccircle cx='850' cy='385' r='22'/%3E%3Cpath d='M640 330 C660 185 728 118 770 100 C812 118 880 185 900 330'/%3E%3Cpath d='M770 100 C748 190 715 255 698 330 M770 100 V330 M770 100 C792 190 825 255 842 330'/%3E%3Cpath d='M745 100 H795 M752 100 V58 M788 100 V58 M745 58 H795 M752 58 L770 26 L788 58'/%3E%3Ccircle cx='770' cy='18' r='6'/%3E%3Cpath d='M920 600 V480 M1060 600 V480 M920 480 C950 425 1030 425 1060 480'/%3E%3Cpath d='M960 600 V545 A15 15 0 0 1 990 545 V600'/%3E%3C/svg%3E") center bottom / 1100px auto no-repeat;
+    opacity: 0.09;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 48px 24px 64px; position: relative; z-index: 1; }
   .preamble {
     font-size: 1.5rem;
     font-weight: 400;
@@ -79,6 +89,7 @@
   .note { margin-top: 44px; font-size: 1.05rem; color: var(--ink-soft); font-style: italic; line-height: 1.7; }
   footer { margin-top: 56px; font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); }
   @media (max-width: 480px) {
+    body::before { background-size: 640px auto; }
     .wrap { padding: 36px 20px 56px; }
     .preamble { font-size: 1.55rem; }
     .msg { font-size: 1.45rem; }
