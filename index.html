@@ -9,7 +9,7 @@
 <meta property="og:image" content="save-the-date.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #2b2118;
@@ -27,24 +27,16 @@
     -webkit-font-smoothing: antialiased;
   }
   .wrap { max-width: 640px; margin: 0 auto; padding: 48px 24px 64px; }
-  .eyebrow {
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    color: var(--ink-soft);
-    margin-bottom: 18px;
-  }
-  h1 { font-size: 2.6rem; font-weight: 500; letter-spacing: 0.12em; line-height: 1.15; }
-  h1 .script {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.4rem;
-    display: block;
-    letter-spacing: 0.02em;
+  .preamble {
+    font-size: 1.5rem;
     font-weight: 400;
-    margin: 2px 0;
+    font-style: italic;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    max-width: 520px;
+    margin: 0 auto;
   }
-  .names { font-size: 1.5rem; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 26px; }
-  .date-place { font-size: 1.15rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); margin-top: 10px; line-height: 1.7; }
   .photo {
     margin: 36px auto 0;
     max-width: 460px;
@@ -87,18 +79,14 @@
   .note { margin-top: 44px; font-size: 1.05rem; color: var(--ink-soft); font-style: italic; line-height: 1.7; }
   footer { margin-top: 56px; font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); }
   @media (max-width: 480px) {
-    h1 { font-size: 2rem; }
-    h1 .script { font-size: 1.9rem; }
+    .preamble { font-size: 1.2rem; }
     .cd-box { min-width: 72px; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <p class="eyebrow">Aparta la fecha</p>
-  <h1>SAVE <span class="script">Our</span> DATE</h1>
-  <p class="names">Blanca &amp; Rodrigo</p>
-  <p class="date-place">21 · Marzo · 2027<br>Firenze, Italia</p>
+  <h1 class="preamble">Hay fechas que cambian una vida entera —<br>esta es la nuestra.</h1>
 
   <div class="photo">
     <img src="save-the-date.jpg" alt="Blanca y Rodrigo — Save the Date, 21 de marzo de 2027, Firenze, Italia">
@@ -168,6 +156,21 @@
     "SUMMARY:Boda de Blanca & Rodrigo",
     "LOCATION:Firenze\\, Italia",
     "DESCRIPTION:Save the date — la invitación formal y los detalles vienen pronto.",
+    "BEGIN:VALARM",
+    "ACTION:DISPLAY",
+    "DESCRIPTION:Boda de Blanca & Rodrigo en 6 meses — ¡ve reservando tus vuelos a Firenze! ✈",
+    "TRIGGER:-P180D",
+    "END:VALARM",
+    "BEGIN:VALARM",
+    "ACTION:DISPLAY",
+    "DESCRIPTION:¡Falta 1 mes para la boda de Blanca & Rodrigo!",
+    "TRIGGER:-P30D",
+    "END:VALARM",
+    "BEGIN:VALARM",
+    "ACTION:DISPLAY",
+    "DESCRIPTION:La boda de Blanca & Rodrigo es en una semana 🤍",
+    "TRIGGER:-P7D",
+    "END:VALARM",
     "END:VEVENT",
     "END:VCALENDAR"
   ].join("\r\n");
